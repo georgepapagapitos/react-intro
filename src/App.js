@@ -32,6 +32,10 @@ function App() {
   let name = 'George';
   let myH1 = <h1>Go home, {name}, you're drunk.</h1>;
 
+  const soberUp = () => {
+    setDrinkCount(0);
+  };
+
   return (
     // 'HTML' is actually "JSX"
     // "Javascript eXtended"
@@ -43,7 +47,7 @@ function App() {
         {name} has had {drinkCount} drink
       </p>
       <button onClick={() => setDrinkCount(drinkCount + 1)}>Drink Up</button>
-      <button onClick={() => setDrinkCount(0)}>Sober Up</button>
+      <button onClick={soberUp}>Sober Up</button>
     </div>
   );
 }
