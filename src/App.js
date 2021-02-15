@@ -29,7 +29,8 @@ function App() {
   // setDrinkCount lets me change the value of my state
   const [drinkCount, setDrinkCount] = useState(1);
 
-  let name = 'George';
+  const [name, setName] = useState('George');
+
   let myH1 = <h1>Go home, {name}, you're drunk.</h1>;
 
   const soberUp = () => {
@@ -48,6 +49,16 @@ function App() {
       </p>
       <button onClick={() => setDrinkCount(drinkCount + 1)}>Drink Up</button>
       <button onClick={soberUp}>Sober Up</button>
+
+      <input
+        placeholder="Enter your name"
+        onChange={(event) => {
+          console.log('changing', event.target.value);
+          // In jQuery we would do:
+          // $(this).val();
+          setName(event.target.value);
+        }}
+      />
     </div>
   );
 }
